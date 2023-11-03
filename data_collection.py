@@ -2,12 +2,17 @@ import cv2
 from cvzone.HandTrackingModule import HandDetector
 import numpy as np
 import math
+import time
 
 cap = cv2.VideoCapture(0) #0 is the id number of the webcam
 detector = HandDetector(maxHands=1)
 
 offset = 20
 imgSize = 300
+
+#image folders
+folder = 'data/gesture_3' #change folder name depending on what you're collecting images for
+counter = 0
 
 while True:
     success, img = cap.read()
@@ -42,7 +47,11 @@ while True:
         cv2.imshow("ImageWhite", imgWhite)    
     
     cv2.imshow("Image", img)
-    cv2.waitKey(1) #1ms delay
+    key = cv2.waitKey(1) #1ms delay
 
 
+    if key == ord("s"):
+        counter = counter + 1 #to count number of images
+        cv2.imwrite(f'{folder}/Image_{time.time()}.jpg', imgWhite)
+        print(counter) 
     
