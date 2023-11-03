@@ -1,3 +1,3 @@
 # Capstone_Project
 
-Domain: Gesture Recognition
+Tags: Gesture Recognition, Computer Vision, Hardware programming, Microcontroller, Audio Synthesis, Sound Generation
