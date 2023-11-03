@@ -20,7 +20,6 @@ while True:
         imgCrop = img[y-offset:y+h+offset, x-offset:x+w+offset] #starting height:ending height, starting width:ending width -- because its a matrix
 
         imgCropShape = imgCrop.shape
-
         aspectRatio = h/w
 
         if aspectRatio>1: #if height is greater than width
@@ -31,14 +30,13 @@ while True:
             wGap = math.ceil((imgSize-wCal)/2)
             imgWhite[:, wGap:wCal+wGap] = imgResize #height is 300 so can leave it blank
 
-        else: #if height is greater than width
+        else: #if width is greater than height
             k = imgSize/w #k is the constant
             hCal = math.ceil(k*h) #always round up, no decimal values
             imgResize = cv2.resize(imgCrop,(imgSize, hCal))
             imgResizeShape = imgResize.shape
             hGap = math.ceil((imgSize-hCal)/2)
-            imgWhite[hGap:hCal+hGap, :] = imgResize #height is 300 so can leave it blank
-
+            imgWhite[hGap:hCal+hGap, :] = imgResize #width is 300 so can leave it blank
 
         cv2.imshow("ImageCrop", imgCrop)
         cv2.imshow("ImageWhite", imgWhite)    
