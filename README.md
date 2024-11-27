@@ -6,4 +6,4 @@ Hand gestures are a natural and intuitive way to interact with machines. This pr
 
 Tags: Gesture Recognition, Computer Vision, Hardware programming, Microcontroller, Audio Synthesis, Sound Generation
 
-Full report available
+Full report - https://github.com/manyasachdev/Gesture-Controlled-Instrument/blob/fe9325ad80758d6bd53c9f6c64bc75860642f503/Capstone_Report_Manya_Sachdev.pdf
